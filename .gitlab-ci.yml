@@ -1,0 +1,21 @@
+image: maven
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+   - echo "Building"
+   - mvn compile
+  artifacts:
+  # Build artefacts are passed between stages implicitly.
+    paths:
+    - target/ # Maven compiled output
+
+test:
+  stage: test
+  script:
+  - echo "Testing"
+  - mvn test # This uses artefacts from build stage
