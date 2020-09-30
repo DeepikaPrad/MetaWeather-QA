@@ -5,6 +5,7 @@ The below basic test cases have been formulated using RestAssured and WireMock:
 Please refer WireMockTest.java.
 
 GitLab CI pipeline was used for CI/CD implementation.
+https://gitlab.com/DeepikaPrad/MetaWeather-QA
 
 
 
