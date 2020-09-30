@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="MetaWeatherQA" basedir=".">
-    <target name="all" depends="compile-test">
+<project name="MetaWeatherQA" default="all" basedir=".">
+    <property name="report.data.dir" location="report.data" />
+    <property name="report.dir" location="report" />
+    <target name="all">
         <mkdir dir="${report.data.dir}"/>
         <mkdir dir="${report.dir}"/>
         <junit fork="no" haltonfailure="no" showoutput="yes" printsummary="true">
-            <test name="${junit.class.name}" todir="${report.data.dir}"/>
+            <test name="$WireMockTest" todir="${report.data.dir}"/>
             <formatter type="brief" usefile="false"/>
             <formatter type="xml"/>
-            <classpath refid="classpath" />
         </junit>
         <junitreport todir="${report.dir}">
             <fileset dir="${report.data.dir}">
