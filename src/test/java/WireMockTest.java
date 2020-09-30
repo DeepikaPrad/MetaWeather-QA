@@ -10,6 +10,7 @@ public class WireMockTest extends WireMockServer {
 
     @Test
     public void verifyValidCity() {
+        //invoking created stub
         setupStub();
 
         given()
